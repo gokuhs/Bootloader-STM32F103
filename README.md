@@ -1,3 +1,7 @@
+The code is the same, i don't touch anything but i upload the compiled .hex for the comunity. 
+
+### Attention, the default entry point of the flash is 0x08008000, I have modified it in this readme since the original one was wrong
+
 # Bootloader-STM32F103
 This is the bootloader for STM32F103 chips.
 
@@ -91,7 +95,7 @@ And then go the the firmware.hex file location directory and do the follow comma
 
 ## Rebuild firmware(Marlin)
 
-This bootloader default boot address is 0x8010000 , so if you want to use this bootloader you need to change the firmware(I think you use Marlin, also you can use other firmware) flash address to 0x8010000.
+This bootloader default boot address is 0x08008000 , so if you want to use this bootloader you need to change the firmware(I think you use Marlin, also you can use other firmware) flash address to 0x08008000.
 
 And if you are using our stm32f103 boards([AIO_II](https://github.com/FYSETC/FYSETC-AIO_II) or [Cheetah](https://github.com/FYSETC/FYSETC-Cheetah)) . You need to add the following lines to the file "Marlin\Marlin\buildroot\share\PlatformIO\scripts\fysetc_STM32F1.py" (or check Marlin PR: https://github.com/MarlinFirmware/Marlin/pull/18179)
 
@@ -132,7 +136,7 @@ You can connect the usb cable to monitor the process.
 
 ## Change the bootloader flash address
 
-This bootloader default boot address is 0x8010000, but also you can change it too.
+This bootloader default boot address is 0x08008000, but also you can change it too.
 
 First , the size of bootloader need at least `32k` , so the user-defined flash size need to be larger than `0x8008000` ,You need to modify firmware(Marlin) and this Bootloader 
 
